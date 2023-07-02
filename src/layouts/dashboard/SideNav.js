@@ -4,7 +4,7 @@ import { useTheme } from "@mui/material/styles";
 import { Box, Divider, IconButton, Stack } from "@mui/material";
 import AntSwitch from "../../components/AntSwitch";
 
-import Logo from "../../assets/Images/logo.ico";
+import Logo from "../../assets/Images/cute.ico";
 
 import useSettings from "../../hooks/useSettings";
 import { Nav_Buttons, Nav_Setting } from "../../data";
@@ -13,6 +13,7 @@ import ProfileMenu from "./ProfileMenu";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { UpdateTab } from "../../redux/slices/app";
+import { Gear } from "phosphor-react";
 
 const getPath = (index) => {
   switch (index) {
@@ -74,12 +75,12 @@ const SideBar = () => {
             sx={{
               height: 64,
               width: 64,
-              borderRadius: 1.5,
+              borderRadius: 1.8,
               backgroundColor: theme.palette.primary.main,
             }}
             p={1}
           >
-            <img src={Logo} alt="Tawk" />
+            <img src={Logo} alt="chat app logo" />
           </Box>
           <Stack
             sx={{ width: "max-content" }}
@@ -91,8 +92,8 @@ const SideBar = () => {
               return el.index == selectedTab ? (
                 <Box
                   sx={{
-                    backgroundColor: theme.palette.primary.main,
-                    borderRadius: 1.5,
+                    backgroundColor: "#BA68C8",
+                    borderRadius: 1.7,
                   }}
                   p={1}
                 >
@@ -116,6 +117,12 @@ const SideBar = () => {
                       theme.palette.mode === "light"
                         ? "#080707"
                         : theme.palette.text.primary,
+                        fontsize: 24,
+                        transition: "font-size 0.2s",
+                        "&:hover": {
+                          color: "red",
+                          fontSize: 32,
+                        },
                   }}
                 >
                   {el.icon}
@@ -127,8 +134,8 @@ const SideBar = () => {
               return el.index == selectedTab ? (
                 <Box
                   sx={{
-                    backgroundColor: theme.palette.primary.main,
-                    borderRadius: 1.5,
+                    backgroundColor: "#BA68C8",
+                    borderRadius: 1.7,
                   }}
                   p={1}
                 >
@@ -136,9 +143,13 @@ const SideBar = () => {
                     onClick={() => {
                       handleChangeTab(el.index);
                     }}
-                    sx={{ width: "max-content", color: "#ffffff" }}
+                    sx={{ width: "max-content", color: "#ffffff" , fontsize: 24,
+                    transition: "font-size 0.2s",
+                    "&:hover": {
+                      fontSize: 32,
+                    }, }}
                   >
-                    {el.icon}
+                 <Gear/>
                   </IconButton>
                 </Box>
               ) : (
@@ -154,9 +165,15 @@ const SideBar = () => {
                       theme.palette.mode === "light"
                         ? "#080707"
                         : theme.palette.text.primary,
+                        fontsize: 24,
+                        transition: "font-size 0.2s",
+                        "&:hover": {
+                          color: "red",
+                          fontSize: 32,
+                        },
                   }}
                 >
-                  {el.icon}
+                  <Gear/>
                 </IconButton>
               );
             })}

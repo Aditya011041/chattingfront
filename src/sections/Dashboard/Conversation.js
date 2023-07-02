@@ -13,7 +13,6 @@ import { DotsThreeVertical, DownloadSimple, Image } from "phosphor-react";
 import { Message_options } from "../../data";
 import { Link } from "react-router-dom";
 import truncateString from "../../utils/truncate";
-import { LinkPreview } from "@dhaiwat10/react-link-preview";
 import Embed from "react-embed";
 
 const MessageOption = () => {
@@ -55,6 +54,8 @@ const MessageOption = () => {
 };
 
 const TextMsg = ({ el, menu }) => {
+  console.log(el); // Log the entire el object
+  console.log(el.text);
   const theme = useTheme();
   return (
     <Stack direction="row" justifyContent={el.incoming ? "start" : "end"}>

@@ -7,7 +7,7 @@ import VerifyForm from "../../sections/auth/VerifyForm";
 
 // ----------------------------------------------------------------------
 
-export default function LoginPage() {
+export default function LoginPage({email}) {
   return (
     <>
       <Stack spacing={2} sx={{ mb: 5, position: "relative" }}>
@@ -15,7 +15,7 @@ export default function LoginPage() {
 
         <Stack direction="row" spacing={0.5}>
           <Typography variant="body2">
-            Sent to email (shreyanshshah242@gmail.com)
+            Sent to email ({email})
           </Typography>
         </Stack>
       </Stack>
